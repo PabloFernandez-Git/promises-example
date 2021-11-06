@@ -16,5 +16,23 @@ const datos = [
 }];
 
 const getDatos = () => {
-    return datos
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(datos);
+        }, 1500);
+    });
 }
+
+//Promises
+/* 
+getDatos()
+    .then((datos) => console.log(datos)); 
+*/
+
+// Async await
+async function fetchingData () {
+    const datosFetched = await getDatos();
+    console.log(datosFetched);
+}
+
+fetchingData();
