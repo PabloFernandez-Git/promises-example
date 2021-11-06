@@ -31,8 +31,12 @@ getDatos()
 
 // Async await
 async function fetchingData () {
-    const datosFetched = await getDatos();
-    console.log(datosFetched);
+    try {
+        const datosFetched = await getDatos();
+        console.log(datosFetched);
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 fetchingData();
